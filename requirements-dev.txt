@@ -1,4 +1,2 @@
-boto3
-requests>=2.20
 awscli
 awscli-local
