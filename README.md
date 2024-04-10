@@ -108,7 +108,7 @@ awslocal lambda create-function \
 
 You should be able to inspect the logs of the LocalStack container to see the creation of these two resources. You can also run: `awslocal lambda list-functions` and see your function.
 
-Let's invoke the function and see what happens:
+Let's invoke the function and see what happens: (Alternatively, you can use `make invoke`)
 
 ```
 awslocal lambda invoke \
