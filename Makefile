@@ -5,7 +5,12 @@ test-setup:
 	make put-function
 	make get-function
 	make get-files-config
-	make invoke-put-function
+
+invoke:
+	awslocal lambda invoke \
+		--function-name put-files \
+		--payload file://put-files/event.json \
+		put-files/response.json
 
 s3-bucket:
 	awslocal s3 mb s3://new-test-bucket
@@ -49,9 +54,3 @@ get-files-config:
 	awslocal s3api put-bucket-notification-configuration \
     --bucket new-test-bucket \
     --notification-configuration "{\"LambdaFunctionConfigurations\": [{\"LambdaFunctionArn\": \"$$(awslocal lambda get-function --function-name get-files | jq -r .Configuration.FunctionArn)\", \"Events\": [\"s3:ObjectCreated:*\"]}]}"
-
-invoke-put-function:
-	awslocal lambda invoke \
-		--function-name put-files \
-		--payload file://put-files/event.json \
-		put-files/response.json
