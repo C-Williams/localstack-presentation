@@ -79,6 +79,8 @@ Our project will be incredibly simple and a bit redundant because this is only a
 - `put-files` function will take an event and load it into an S3 bucket.
 - `get-files` function will be invoked by the s3 bucket receiving an item and will simply print that output.
 
+> NOTE: (You can alternatively use `make test-setup` if you don't want to run each command one-by-one)
+
 ### First, we must create the S3 bucket:
 
 ```
