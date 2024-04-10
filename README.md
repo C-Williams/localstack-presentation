@@ -2,6 +2,12 @@
 
 This walkthrough is based off of LocalStack's own [Quick Start](https://docs.localstack.cloud/getting-started/quickstart/), its purpose is to demonstrate the capabilities of LocalStack. It is not important to understand everything that we will do, this is only to show-off a little of what is possible.
 
+Clone using:
+
+```
+git clone git@github.com:C-Williams/localstack-presentation.git
+```
+
 # Setup and Prerequisites
 
 ## Install Python
